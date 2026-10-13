@@ -1,81 +1,183 @@
 # E-Commerce Data Analytics
 
-## Project Overview
-This project demonstrates an e-commerce data analysis workflow using Python. It covers web scraping, exploratory data analysis, data visualization, and sentiment analysis.
+A Python portfolio project demonstrating web scraping, exploratory data analysis (EDA), data visualization, and sentiment analysis.
 
-## Technologies Used
+## Project Overview
+
+This project collects book catalogue information from [Books to Scrape](https://books.toscrape.com/), analyzes product prices and ratings, creates visualizations, and demonstrates sentiment analysis using VADER.
+
+**Dataset note:** The catalogue data represents listed books, not sales transactions. Sentiment analysis uses sample review text, not genuine customer feedback.
+
+## Technologies
+
 - Python
 - Requests
-- BeautifulSoup
+- Beautiful Soup
 - Pandas
 - Matplotlib
 - Seaborn
-- VADER Sentiment Analysis
+- VADER Sentiment
 
-## Task 1: Web Scraping
-Collected 60 book listings from Books to Scrape, a practice website. Extracted product names, prices in GBP, availability, and ratings.
+## Project Structure
+
+```text
+Ecommerce_Data_Analytics/
+├── data/
+│   ├── scraped_products.csv
+│   └── sample_sentiment_results.csv
+├── results/
+│   ├── eda_report.txt
+│   ├── price_distribution.png
+│   ├── products_by_rating.png
+│   ├── top_five_expensive.png
+│   ├── product_availability.png
+│   ├── average_price_by_rating.png
+│   └── sentiment_analysis.png
+├── task1_web_scraping/
+│   └── scrape_products.py
+├── task2_eda/
+│   └── eda_analysis.py
+├── task3_visualization/
+│   └── visualize_data.py
+├── task4_sentiment_analysis/
+│   └── sentiment_analysis.py
+├── requirements.txt
+└── README.md
+````
+
+## Tasks
+
+### Task 1 — Web Scraping
+
+Collects product names, prices, availability, and ratings from the Books to Scrape catalogue.
+
+Script: `task1_web_scraping/scrape_products.py`
 
 Output: `data/scraped_products.csv`
 
-## Task 2: Exploratory Data Analysis
-Analyzed the scraped dataset to examine missing values, duplicate records, price statistics, ratings, availability, and the most and least expensive products.
+### Task 2 — Exploratory Data Analysis
 
-Key findings:
-- Total products analyzed: 60
-- Average listed price: approximately £35.00
-- Missing values: 0
-- Duplicate rows: 0
-- All 60 listings were marked in stock.
+Examines dataset dimensions, missing values, duplicate products, price statistics, ratings, and availability.
 
-## Task 3: Data Visualization
-Created the following charts:
-- Product price distribution
-- Number of products by rating
-- Five most expensive books
-- Product availability
+Script: `task2_eda/eda_analysis.py`
 
-The chart images are stored in the `results/` folder.
+Output: `results/eda_report.txt`
 
-## Task 4: Sentiment Analysis
-Used VADER sentiment analysis to classify ten sample review sentences as positive, negative, or neutral.
+### Task 3 — Data Visualization
+
+Creates charts showing price distribution, rating counts, the five most expensive listed products, availability, and average price by rating.
+
+Script: `task3_visualization/visualize_data.py`
+
+Charts: `results/`
+
+### Task 4 — Sentiment Analysis
+
+Uses VADER to classify sample reviews as positive, neutral, or negative.
+
+Script: `task4_sentiment_analysis/sentiment_analysis.py`
 
 Outputs:
-- `data/sample_sentiment_results.csv`
-- `results/sentiment_analysis.png`
 
-Note: These are sample review sentences, not real customer reviews.
+* `data/sample_sentiment_results.csv`
+* `results/sentiment_analysis.png`
 
-## Project Structure
-- `task1_web_scraping/` - Web scraping code
-- `task2_eda/` - Exploratory data analysis
-- `task3_visualization/` - Data visualization code
-- `task4_sentiment_analysis/` - Sentiment analysis code
-- `data/` - CSV datasets
-- `results/` - Generated charts
-- `requirements.txt` - Python dependencies
+## Visualizations
 
-## How to Run
-1. Install Python 3.
-2. Open Terminal in the project directory.
-3. Create a virtual environment:
+### Price Distribution
 
-   `python3 -m venv venv`
+![Price Distribution](results/price_distribution.png)
 
-4. Activate it:
+### Products by Rating
 
-   `source venv/bin/activate`
+![Products by Rating](results/products_by_rating.png)
 
-5. Install dependencies:
+### Top Five Expensive Products
 
-   `python -m pip install -r requirements.txt`
+![Top Five Expensive Products](results/top_five_expensive.png)
 
-6. Run the scripts from their respective task folders.
+### Product Availability
+
+![Product Availability](results/product_availability.png)
+
+### Average Price by Rating
+
+![Average Price by Rating](results/average_price_by_rating.png)
+
+### Sample Review Sentiment
+
+![Sentiment Analysis](results/sentiment_analysis.png)
+
+## Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ShaikMuskan0414/Ecommerce_Data_Analytics.git
+cd Ecommerce_Data_Analytics
+```
+
+### 2. Create and activate a virtual environment
+
+macOS/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Windows:
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Run the Project
+
+Run these commands from the project root:
+
+```bash
+python task1_web_scraping/scrape_products.py
+python task2_eda/eda_analysis.py
+python task3_visualization/visualize_data.py
+python task4_sentiment_analysis/sentiment_analysis.py
+```
+
+On macOS, use `python3` if `python` is unavailable.
+
+The scraping task requires an internet connection. The other tasks use local data or sample text as implemented.
+
+## Key Findings
+
+The current scraped dataset contains 60 book listings, all marked as in stock in the collected snapshot. The dataset describes catalogue information and does not establish sales, revenue, or customer purchasing behavior.
+
+The sentiment analysis demonstrates a text-classification workflow on sample reviews only.
 
 ## Limitations
-The scraped dataset contains book listings rather than real e-commerce sales transactions. The analysis therefore does not measure actual revenue or purchasing behavior. Sentiment analysis uses sample sentences and may misclassify ambiguous text.
+
+* The scraped catalogue is a limited snapshot and may change.
+* Catalogue prices and ratings are not sales or revenue data.
+* Sample reviews do not represent real customer feedback.
+* VADER is rule-based, so sentiment labels may not match human judgments.
 
 ## Future Improvements
-- Analyze a real, documented e-commerce sales dataset.
-- Use appropriately sourced customer reviews.
-- Expand the visualizations and business insights.
-- Evaluate and improve sentiment classification.
+
+* Analyze a larger product catalogue.
+* Use genuine reviews where collection is permitted.
+* Compare sentiment across product categories.
+* Add further statistical analysis and interactive visualizations.
+
+## Author
+
+Shaik Muskan
+
+## License
+
+Educational and portfolio project.

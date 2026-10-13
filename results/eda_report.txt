@@ -1,0 +1,52 @@
+E-COMMERCE DATA ANALYTICS - EDA REPORT
+=============================================
+
+DATASET OVERVIEW
+Total rows loaded: 60
+Valid rows analyzed: 60
+Number of columns: 4
+Duplicate product names: 0
+Missing values by column:
+product_name    0
+price_gbp       0
+availability    0
+rating          0
+
+PRICE ANALYSIS (GBP)
+count    60.00
+mean     35.00
+std      14.55
+min      12.84
+25%      22.04
+50%      33.48
+75%      50.14
+max      57.31
+
+PRICE RANGE
+Below £20: 14
+£20 to £39.99: 22
+£40 and above: 24
+
+PRODUCT RATINGS
+rating
+One      15
+Five     14
+Three    13
+Four     10
+Two       8
+
+AVERAGE PRICE BY RATING
+rating
+Five     32.48
+Two      33.87
+One      34.31
+Four     35.53
+Three    38.81
+
+AVAILABILITY
+availability
+In stock    60
+
+INTERPRETATION
+This dataset contains book catalogue listings, not sales transactions.
+Listed prices and ratings do not establish sales, revenue, or customer behavior.
