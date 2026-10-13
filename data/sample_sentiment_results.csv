@@ -1,0 +1,11 @@
+review,sentiment
+"Excellent product, I really love it!",Positive
+Very good quality and fast delivery.,Positive
+"Amazing experience, highly recommended.",Positive
+"The product is okay, nothing special.",Negative
+It is average and works as expected.,Neutral
+The quality is poor and disappointing.,Negative
+"Terrible product, I regret buying it.",Negative
+Delivery was slow and the product was damaged.,Negative
+Good value for money.,Positive
+Not worth the price.,Negative
